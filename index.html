@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FitDiff: Robust monocular 3D facial shape and reflectance estimation using Diffusion Models ">
+  <meta name="keywords" content="FitDiff, Avatars, Diffusion Models, LDM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitDiff: Robust monocular 3D facial shape and reflectance estimation using Diffusion Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">FitDiff: Robust monocular 3D facial shape and reflectance estimation using Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://stathisgln.github.io/">Stathis Galanakis</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://alexlattas.com">Alexandros Lattas</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://moschoglou.com/">Stylianos Moschoglou</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.imperial.ac.uk/people/s.zafeiriou">Stefanos Zafeiriou</a>
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Imperial College London, UK</span><br>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Galanakis_FitDiff_Robust_Monocular_3D_Facial_Shape_and_Reflectance_Estimation_using_WACV_2025_paper.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                     <span class="icon">
+                      <i class="fa fa-file-pdf-o"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://openaccess.thecvf.com/content/WACV2025/supplemental/Galanakis_FitDiff_Robust_Monocular_WACV_2025_supplemental.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                     <span class="icon">
+                      <i class="fa fa-file-pdf-o"></i>
+                    </span>
+                    <span>Supp Material</span>
+                  </a>
+                </span>
+
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2312.04465"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="subtitle has-text-justified">
+        <p>
+          <b>TL;DR</b>: We introduce FitDiff:<br>
+          &nbsp;&nbsp;&nbsp; 🔥 A multi-modal diffusion-based generative model that
+          jointly produces facial geometry and appearance (Diffuse Albedo, Specular Slbedo, and Normal Maps. <br>
+          &nbsp;&nbsp;&nbsp; 🔥 The first diffusion model conditioned on identity embeddings, acquired
+          from an off-the-shelf face recognition network, whilst introducing a SPADE conditioned UNet architecture. <br>
+          &nbsp;&nbsp;&nbsp; 🔥 Through a novel guidance algorithm, it achieves acurate facial identity reconstruction. <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>  
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="subtitle has-text-justified">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./videos/fig1_1.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        FitDiff, a versatile multi-modal diffusion model, produces relightable facial avatars that seamlessly integrate into various commercial rendering platforms.
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./videos/fig1_2.mp4"
+                type="video/mp4">
+      </video>
+      <br><br>
+      <h2 class="subtitle has-text-centered">
+        Given "in-the-wild" facial images, FitDiff reconstructs facial avatars consisting of facial shape and reflectance.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+             In this work, we present FitDiff, a diffusion-based 3D facial avatar generative model. Leveraging 
+             diffusion principles, our model accurately generates relightable facial avatars, utilizing an identity 
+             embedding extracted from an “in-thewild” 2D facial image.
+          </p>
+          <p>
+            The introduced multi-modal diffusion model is the first to concurrently output facial reflectance maps 
+            (diffuse and specular albedo and normals) and shapes, showcasing great generalization capabilities.
+            It is solely trained on an annotated subset of a public facial dataset, paired with 3D reconstructions.
+             We revisit the typical 3D facial fitting approach by guiding a reverse diffusion process using perceptual
+             and face recognition losses.
+          </p>
+          <p>
+            Being the first 3D LDM conditioned on face recognition embeddings, FitDiff reconstructs relightable human avatars,
+            that can be used as-is in common rendering engines, starting only from an unconstrained facial image, 
+            and achieving state-of-the-art performance.
+          </p>  
+          <br>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./videos/method.mp4"
+                type="video/mp4">
+      </video>
+
+      </p>
+      <br>
+      <p>
+        Starting from Gaussian noise, FitDiff concurently generates
+        facial shape and reflectance maps (diffuse albedo, specular albedo and normals),
+        conditioned on an identity embedding vector.
+        During sampling, a novel guidance algorithm is applied for further control of the resulting facial avatar.
+        Z<sub>T</sub>,Z<sub>k</sub> and Z<sub>k−1</sub> are visualized in the actual picture space for illustration purposes
+
+      </p>
+      </div>
+    </div>
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Unconditional Sampling</h2>
+      </h2>
+      </div>
+    </div>
+    <p>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./videos/fig3.mp4"
+                type="video/mp4">
+      </video>
+    </p>
+      <br>
+      <p>
+        FitDiff can  generate diverse facial identities without the need for pre-existing input.
+        These assets offer significant potential across diverse applications, including enhancing
+        existing datasets through augmentation and enrichment,
+        as well as the creation of genuinely random identities for computer-based applications.
+      </p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The template is borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+            and is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
