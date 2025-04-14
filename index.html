@@ -29,21 +29,26 @@
             <h1 class="title is-1 publication-title">SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://stathisgln.github.io/">Stathis Galanakis</a>,
+                <a href="https://stathisgln.github.io/">Stathis Galanakis</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://alexlattas.com">Alexandros Lattas</a>,
+                <a href="https://alexlattas.com">Alexandros Lattas</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://moschoglou.com/">Stylianos Moschoglou</a>,
+                <a href="https://moschoglou.com/">Stylianos Moschoglou</a><sup>1</sup>,
+              </span>
+              <p>
+              <span class="author-block">
+                <a href="https://bernhard-kainz.com/">Bernhard Kainz</a><sup>1,2</sup>, 
               </span>
               <span class="author-block">
-                <a href="https://www.imperial.ac.uk/people/s.zafeiriou">Stefanos Zafeiriou</a>
+                <a href="https://www.imperial.ac.uk/people/s.zafeiriou">Stefanos Zafeiriou</a><sup>1</sup>
               </span>
             </div>
   
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Imperial College London, UK</span><br>
+              <sup>1</sup><span class="author-block">Imperial College London, UK</span><br>
+              <sup>2</sup><span class="author-block">FAU Erlangen-Nürnberg, Germany</span><br>
             </div>
   
           </div>
@@ -83,6 +88,29 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Despite recent progress in diffusion models, generating realistic head portraits from novel viewpoints remains a significant challenge.
+          Most current approaches are constrained to limited angular ranges, predominantly focusing on frontal or near-frontal views.
+          Moreover, although the recent emerging large-scale diffusion models have been proven robust in handling 3D scenes,
+          they underperform on facial data, given their complex structure and the uncanny valley pitfalls.
+          In this paper, we propose SpinMeRound, a diffusion-based approach designed to generate consistent and accurate head portraits from novel viewpoints.
+          By leveraging a number of input views alongside an identity embedding, our method effectively synthesizes diverse viewpoints of a subject whilst robustly maintaining its unique identity features.
+          Through experimentation, we showcase our model's generation capabilities in 360 head synthesis, while beating current state-of-the-art multiview diffusion models.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="column is-full-width">
@@ -91,7 +119,7 @@
     <div class="hero-body">
       <div class="subtitle has-text-justified">
       <img src="images/method.png" alt="Method figure">
-      <h3 class="subtitle has-text-centered">
+      <h3 class="content has-text-centered">
         Starting with the given input conditioning views, the identity embedding W is extracted via a Face Recognition network (ArcFace).
         Both the conditioning and target views are encoded and combined with corresponding ray coordinate maps that represent camera poses.
         After sampling, our method synthesizes photorealistic images from novel angles, along with their associated shape normals N.
@@ -178,6 +206,14 @@
 
 </section>
 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+    </code></pre>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
