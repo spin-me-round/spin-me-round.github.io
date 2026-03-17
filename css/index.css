@@ -174,3 +174,8 @@ body {
   min-height: 3rem;
   border: 1px dashed orange;
 }
+    background: linear-gradient(180deg, #051937 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
